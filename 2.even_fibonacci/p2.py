@@ -1,13 +1,12 @@
-lst = [0, 1]
-count = 1
-while True:
-	current = lst[count]
-	previous = lst[count - 1]
-	next = current + previous
-	if next <= 4000000:
-		lst.append(next)
-		count += 1
-	else:
-		break
+def main():
+	fib(0, 1, 0)
 
-answer = sum([i for i in lst if i % 2 == 0])
+def fib(x, y, z):
+	add = x + y
+	if add % 2 == 0:
+		z += add
+	print add
+	if add <= 4000000:
+		fib(y, add, z)
+	else:
+		answer = z
